@@ -2,6 +2,10 @@
 
 Welcome to my professional portfolio website! This is where I showcase my work, skills, and experience in software development.
 
+## 🌐 Live Website
+
+Visit my portfolio at: [https://millythedev.github.io/website/](https://millythedev.github.io/website/)
+
 ## 🚀 About Me
 
 I'm a passionate software developer with a focus on creating beautiful, functional, and user-friendly applications. My expertise lies in modern web technologies and I'm constantly learning and adapting to new tools and frameworks.

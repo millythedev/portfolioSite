@@ -42,6 +42,8 @@ jobs:
         run: |
           find dist -type f -name "*.js" -exec sh -c 'echo "Content-Type: application/javascript" > "{}.headers"' \;
           find dist -type f -name "*.mjs" -exec sh -c 'echo "Content-Type: application/javascript" > "{}.headers"' \;
+          find dist -type f -name "*.js" -exec sh -c 'mv "{}" "{}.mjs"' \;
+          find dist -type f -name "*.js.headers" -exec sh -c 'mv "{}" "{}.mjs.headers"' \;
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

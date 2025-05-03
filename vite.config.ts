@@ -17,5 +17,10 @@ export default defineConfig({
         entryFileNames: 'assets/[name].[hash].js'
       }
     }
+  },
+  server: {
+    headers: {
+      'Content-Type': 'application/javascript'
+    }
   }
 });

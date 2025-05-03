@@ -22,5 +22,8 @@ export default defineConfig({
     headers: {
       'Content-Type': 'application/javascript'
     }
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom']
   }
 });

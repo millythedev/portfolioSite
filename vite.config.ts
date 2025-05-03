@@ -7,16 +7,7 @@ export default defineConfig({
   base: '/portfolioSite/',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
-    sourcemap: true,
-    rollupOptions: {
-      output: {
-        manualChunks: undefined,
-        assetFileNames: 'assets/[name].[hash][extname]',
-        chunkFileNames: 'assets/[name].[hash].js',
-        entryFileNames: 'assets/[name].[hash].js'
-      }
-    }
+    assetsDir: 'assets'
   },
   server: {
     headers: {

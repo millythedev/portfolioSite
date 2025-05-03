@@ -40,10 +40,14 @@ jobs:
       
       - name: Add MIME type headers
         run: |
+          # Create headers directory if it doesn't exist
+          mkdir -p dist/_headers
+          
+          # Add global headers
+          echo "/*\n  Content-Type: application/javascript" > dist/_headers
+          
+          # Add specific headers for JS files
           find dist -type f -name "*.js" -exec sh -c 'echo "Content-Type: application/javascript" > "{}.headers"' \;
-          find dist -type f -name "*.mjs" -exec sh -c 'echo "Content-Type: application/javascript" > "{}.headers"' \;
-          find dist -type f -name "*.js" -exec sh -c 'mv "{}" "{}.mjs"' \;
-          find dist -type f -name "*.js.headers" -exec sh -c 'mv "{}" "{}.mjs.headers"' \;
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -37,6 +37,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
+      - name: Add MIME type headers
+        run: |
+          mkdir -p dist/_headers
+          echo "/*\n  Content-Type: application/javascript" > dist/_headers
+          find dist -type f -name "*.js" -exec sh -c 'echo "Content-Type: application/javascript" > "{}.headers"' \;
+          find dist -type f -name "*.mjs" -exec sh -c 'echo "Content-Type: application/javascript" > "{}.headers"' \;
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# Portfolio Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## 🌐 Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Visit the live site at: [https://millythedev.github.io/portfolioSite/](https://millythedev.github.io/portfolioSite/)
 
-## Expanding the ESLint configuration
+## 🛠️ Built With
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React 18
+- TypeScript
+- Vite
+- GitHub Pages for hosting
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Prerequisites
+
+- Node.js (v20 or higher recommended)
+- Bun package manager
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/millythedev/portfolioSite.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   bun install
+   ```
+
+3. Start the development server:
+   ```bash
+   bun run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## 📦 Scripts
+
+- `bun run dev` - Start development server
+- `bun run build` - Build for production
+- `bun run preview` - Preview production build locally
+- `bun run lint` - Run linter
+- `bun run format` - Format code
+
+## 📂 Project Structure
+
+```
+src/
+├── components/     # React components
+├── styles/        # CSS files
+├── assets/        # Images, fonts, etc.
+├── hooks/         # Custom React hooks
+├── utils/         # Utility functions
+├── App.tsx        # Main App component
+└── main.tsx       # Entry point
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🔄 Deployment
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+The site automatically deploys to GitHub Pages when changes are pushed to the main branch.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).

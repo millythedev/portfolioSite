@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 265 75% 9%;
+    --foreground: 240 10% 82%;
+
+    --card: 270 71% 10%;
+    --card-foreground: 240 10% 82%;
+
+    --popover: 270 71% 10%;
+    --popover-foreground: 240 10% 82%;
+
+    --primary: 181 40% 53%;
+    --primary-foreground: 270 71% 10%;
+
+    --secondary: 246 62% 62%;
+    --secondary-foreground: 270 71% 10%;
+
+    --muted: 270 50% 20%;
+    --muted-foreground: 240 10% 65%;
+
+    --accent: 250 24% 30%;
+    --accent-foreground: 240 10% 82%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 240 10% 82%;
+
+    --border: 270 50% 15%;
+    --input: 270 50% 15%;
+    --ring: 181 40% 53%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sourceCode font-bold;
+  }
+
+  section {
+    @apply py-16 md:py-24;
+  }
+}
+
+@layer utilities {
+  .section-title {
+    @apply text-2xl md:text-3xl font-sourceCode font-bold mb-8 relative;
+  }
+
+  .section-title::before {
+    content: '<';
+    @apply text-primary;
+  }
+
+  .section-title::after {
+    content: '/>';
+    @apply text-primary;
+  }
+
+  .gradient-01 {
+    background: linear-gradient(270deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--secondary)) 60%);
+    filter: blur(125px);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(97.86deg,
+      hsl(var(--primary)/0.4) 0%,
+      hsl(var(--secondary)/0.4) 60%);
+    filter: blur(125px);
+  }
+
+  .skill-bar {
+    @apply h-4 rounded-full overflow-hidden relative;
+    background: hsl(var(--muted));
+  }
+
+  .skill-progress {
+    @apply h-full absolute top-0 left-0;
+    animation: fillBar 1.5s ease-in-out forwards;
+    transform-origin: left;
+  }
+
+  @keyframes fillBar {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  .nav-item-active {
+    @apply text-primary;
+  }
+
+  .border-glow {
+    @apply border-2 border-primary rounded-xl transition-all;
+    box-shadow: 0 0 10px hsl(var(--primary));
+  }
+
+  .project-card {
+    @apply overflow-hidden rounded-xl bg-card transition-all;
+  }
+
+  .project-card:hover {
+    @apply border-glow;
+  }
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('/fonts/sourcecodepro-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('/fonts/sourcecodepro-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

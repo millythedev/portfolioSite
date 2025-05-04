@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/',  // Changed from '/website/' to '/'
+  base: '/portfolioSite/',  // Changed to match GitHub Pages repository name
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

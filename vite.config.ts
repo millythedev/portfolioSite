@@ -23,8 +23,12 @@ export default defineConfig({
   },
   server: {
     headers: {
-      'Content-Type': 'application/javascript'
-    }
+      'Content-Type': 'application/javascript',
+      'Access-Control-Allow-Origin': '*'
+    },
+    port: 3000,
+    strictPort: false,
+    host: true
   },
   optimizeDeps: {
     include: ['react', 'react-dom']

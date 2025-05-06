@@ -4,7 +4,7 @@ import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/portfolioSite/',
+  base: process.env.NODE_ENV === 'production' ? '/portfolioSite/' : '/',
   plugins: [react()],
   resolve: {
     alias: {

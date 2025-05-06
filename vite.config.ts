@@ -4,13 +4,14 @@ import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '/portfolioSite/',
   plugins: [react()],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
       '@/lib': resolve(__dirname, 'src/lib')
-    }
+    },
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
   },
   build: {
     outDir: 'dist',
@@ -30,6 +31,10 @@ export default defineConfig({
     fs: {
       strict: true,
       allow: ['..']
+    },
+    headers: {
+      'Content-Type': 'application/javascript',
+      'Access-Control-Allow-Origin': '*'
     }
   },
   optimizeDeps: {
@@ -40,4 +45,4 @@ export default defineConfig({
     include: /src\/.*\.[tj]sx?$/,
     exclude: []
   }
-}) 
+})

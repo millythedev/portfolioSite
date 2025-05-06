@@ -95,7 +95,7 @@ export function Header() {
             whileHover={{ scale: 1.2, rotate: 5 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            <img src="/images/github.svg" alt="GitHub" width={24} height={24} />
+            <img src="/portfolioSite/images/github.svg" alt="GitHub" width={24} height={24} />
           </motion.a>
           <motion.a
             href={SOCIAL_LINKS.linkedin}
@@ -105,7 +105,7 @@ export function Header() {
             whileHover={{ scale: 1.2, rotate: -5 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            <img src="/images/linkedin.svg" alt="LinkedIn" width={24} height={24} />
+            <img src="/portfolioSite/images/linkedin.svg" alt="LinkedIn" width={24} height={24} />
           </motion.a>
         </div>
 
@@ -184,7 +184,7 @@ export function Header() {
                     rel="noopener noreferrer"
                     className="text-foreground hover:text-primary transition-colors"
                   >
-                    <img src="/images/github.svg" alt="GitHub" width={20} height={20} />
+                    <img src="/portfolioSite/images/github.svg" alt="GitHub" width={20} height={20} />
                   </a>
                   <a
                     href={SOCIAL_LINKS.linkedin}
@@ -192,7 +192,7 @@ export function Header() {
                     rel="noopener noreferrer"
                     className="text-foreground hover:text-primary transition-colors"
                   >
-                    <img src="/images/linkedin.svg" alt="LinkedIn" width={20} height={20} />
+                    <img src="/portfolioSite/images/linkedin.svg" alt="LinkedIn" width={20} height={20} />
                   </a>
                 </motion.li>
               </ul>

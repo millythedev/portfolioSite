@@ -52,7 +52,7 @@ export function HeroSection() {
                   variants={fadeIn("up", 0)}
                   whileHover={{ scale: 1.2 }}
                 >
-                  <img src="/images/github.svg" alt="GitHub" width={24} height={24} />
+                  <img src="/portfolioSite/images/github.svg" alt="GitHub" width={24} height={24} />
                 </motion.a>
                 <motion.a
                   href={SOCIAL_LINKS.linkedin}
@@ -62,7 +62,7 @@ export function HeroSection() {
                   variants={fadeIn("up", 0.1)}
                   whileHover={{ scale: 1.2 }}
                 >
-                  <img src="/images/linkedin.svg" alt="LinkedIn" width={24} height={24} />
+                  <img src="/portfolioSite/images/linkedin.svg" alt="LinkedIn" width={24} height={24} />
                 </motion.a>
               </StaggerContainer>
             </AnimatedElement>

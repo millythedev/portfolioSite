@@ -5,7 +5,7 @@ Welcome to my professional portfolio website! This is where I showcase my work, 
 
 ## 🌐 Live Website
 
-Visit my portfolio at: [https://millythedev.github.io/website/](https://millythedev.github.io/website/)
+Visit my portfolio at: [https://millythedev.github.io/website/](https://millythedev.github.io/portfolioSite/)
 
 ## 🚀 About Me
 

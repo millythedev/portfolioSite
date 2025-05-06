@@ -1,41 +1,26 @@
-import path from "path";
-import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: process.env.NODE_ENV === 'production' ? '/portfolioSite/' : '/',
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+      '@': resolve(__dirname, './src'),
+      '@/lib': resolve(__dirname, './src/lib')
+    }
   },
   build: {
     outDir: 'dist',
-    sourcemap: true,
     assetsDir: 'assets',
-    rollupOptions: {
-      output: {
-        manualChunks: undefined,
-      },
-    },
+    sourcemap: true,
   },
   server: {
-    headers: {
-      'Content-Type': 'application/javascript',
-      'Access-Control-Allow-Origin': '*'
-    },
     port: 5173,
-    strictPort: false,
+    strictPort: true,
     host: true,
-    fs: {
-      strict: false,
-      allow: ['..']
-    }
   },
   optimizeDeps: {
-    include: ['react', 'react-dom']
+    include: ['react', 'react-dom', 'react-router-dom'],
   },
-  publicDir: 'public'
-});
+}) 

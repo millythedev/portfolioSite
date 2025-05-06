@@ -26,9 +26,18 @@ export default defineConfig({
     port: 3000,
     host: '127.0.0.1',
     strictPort: false,
-    open: true
+    open: true,
+    fs: {
+      strict: true,
+      allow: ['..']
+    }
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
   },
+  esbuild: {
+    loader: 'tsx',
+    include: /src\/.*\.[tj]sx?$/,
+    exclude: []
+  }
 }) 

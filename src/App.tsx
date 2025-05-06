@@ -42,6 +42,7 @@ function App() {
 
     // Cherry blossom petal shape (drawn as pink ellipses)
     function drawPetal(x: number, y: number, angle: number, scale: number) {
+      if (!ctx) return;
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(angle);
@@ -92,7 +93,7 @@ function App() {
     let running = true;
 
     function animate(now: number) {
-      if (!running) return;
+      if (!running || !ctx || !canvas) return;
       const dt = Math.min(32, now - lastTime);
       lastTime = now;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -205,10 +206,9 @@ function App() {
           left: 0,
           width: "100vw",
           height: "100vh",
-          zIndex: 0,
+          zIndex: -1,
           pointerEvents: "none",
-          background:
-            "radial-gradient(ellipse at center, transparent 65%, rgba(0,0,0,0.25) 100%)",
+          background: "radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.2) 100%)",
         }}
         aria-hidden="true"
       />

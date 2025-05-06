@@ -116,7 +116,7 @@ export function HeroSection() {
               className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden transition-transform duration-300 group"
             >
               <motion.img
-                src={import.meta.env.BASE_URL + "images/profile-placeholder.jpg"}
+                src={import.meta.env.BASE_URL + "public/images/profile-placeholder.jpg"}
                 alt="Emilio Joe Cleveland"
                 className="w-full h-full object-cover rounded-full shadow-none group-hover:shadow-[0_12px_32px_8px_rgba(236,72,153,0.25)] group-hover:-translate-y-4 transition-all duration-300"
                 initial={{ scale: 1 }}

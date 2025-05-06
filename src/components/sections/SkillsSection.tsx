@@ -50,7 +50,7 @@ export function SkillsSection() {
         </StaggerContainer>
 
         <AnimatedElement variants={fadeIn("up", 0.4)} className="mt-16">
-          <h3 className="text-xl font-sourceCode font-bold mb-8 text-center">
+          <h3 className="text-xl font-sourceCode font-bold mb-8 text-center section-title">
             Technical Proficiency
           </h3>
 

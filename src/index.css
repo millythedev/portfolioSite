@@ -44,7 +44,7 @@
     @apply bg-background text-foreground font-poppins;
     font-size: 16px;
     line-height: 1.6;
-    background: linear-gradient(to bottom, #ff0000 0%, #000000 50%, #ff0000 100%);
+    background: linear-gradient(to bottom, #ff0000 0%, #000000 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {

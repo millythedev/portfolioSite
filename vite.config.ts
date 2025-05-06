@@ -7,10 +7,16 @@ export default defineConfig({
   base: '/portfolioSite/',
   plugins: [react()],
   resolve: {
-    alias: {
-      '@': resolve(__dirname, './src'),
-      '@/lib': resolve(__dirname, './src/lib')
-    }
+    alias: [
+      {
+        find: '@',
+        replacement: resolve(__dirname, 'src')
+      },
+      {
+        find: '@/lib',
+        replacement: resolve(__dirname, 'src/lib')
+      }
+    ]
   },
   build: {
     outDir: 'dist',

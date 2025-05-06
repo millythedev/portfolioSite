@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 0 75% 9%;
+    --background: 0 0% 0%;
     --foreground: 240 10% 82%;
 
-    --card: 0 71% 10%;
+    --card: 0 0% 5%;
     --card-foreground: 240 10% 82%;
 
-    --popover: 0 71% 10%;
+    --popover: 0 0% 5%;
     --popover-foreground: 240 10% 82%;
 
-    --primary: 181 40% 53%;
-    --primary-foreground: 0 71% 10%;
+    --primary: 270 100% 50%;
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 246 62% 62%;
-    --secondary-foreground: 0 71% 10%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 0 50% 20%;
+    --muted: 0 0% 15%;
     --muted-foreground: 240 10% 65%;
 
-    --accent: 0 24% 30%;
+    --accent: 0 0% 20%;
     --accent-foreground: 240 10% 82%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 240 10% 82%;
 
-    --border: 0 50% 15%;
-    --input: 0 50% 15%;
-    --ring: 181 40% 53%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 270 100% 50%;
 
     --radius: 0.5rem;
   }
@@ -44,6 +44,7 @@
     @apply bg-background text-foreground font-poppins;
     font-size: 16px;
     line-height: 1.6;
+    background: linear-gradient(to bottom, #000000, #ff0000);
   }
 
   h1, h2, h3, h4, h5, h6 {

@@ -73,15 +73,15 @@
 
   .gradient-01 {
     background: linear-gradient(270deg,
-      hsl(var(--primary)) 0%,
-      hsl(var(--secondary)) 60%);
+      hsl(270 100% 50%) 0%,
+      hsl(270 100% 50%) 60%);
     filter: blur(125px);
   }
 
   .hero-gradient {
     background: linear-gradient(97.86deg,
-      hsl(var(--primary)/0.4) 0%,
-      hsl(var(--secondary)/0.4) 60%);
+      hsl(270 100% 50% / 0.4) 0%,
+      hsl(270 100% 50% / 0.4) 60%);
     filter: blur(125px);
   }
 

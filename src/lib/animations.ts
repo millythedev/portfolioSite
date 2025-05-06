@@ -88,11 +88,11 @@ export const textVariant = (delay = 0): Variants => {
 export const cardHoverVariants: Variants = {
   initial: {
     scale: 1,
-    boxShadow: "0px 0px 0px rgba(128, 0, 128, 0)"
+    boxShadow: "0px 0px 0px rgba(128, 0, 255, 0)"
   },
   hover: {
     scale: 1.03,
-    boxShadow: "0px 5px 15px rgba(128, 0, 128, 0.3)",
+    boxShadow: "0px 5px 15px rgba(128, 0, 255, 0.3)",
     transition: {
       duration: 0.3,
       ease: "easeOut"

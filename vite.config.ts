@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/portfolioSite/',
+  base: process.env.NODE_ENV === 'production' ? '/portfolioSite/' : '/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

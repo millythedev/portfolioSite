@@ -9,7 +9,7 @@ if (!rootElement) {
 }
 
 createRoot(rootElement).render(
-  <BrowserRouter basename="/portfolioSite">
+  <BrowserRouter basename={import.meta.env.PROD ? '/portfolioSite' : '/'}>
     <App />
   </BrowserRouter>
 );

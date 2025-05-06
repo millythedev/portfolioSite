@@ -34,7 +34,7 @@ function App() {
           opacity: scrollProgress / 100,
           background: `linear-gradient(to bottom, 
             hsl(0 0% 0%) 0%,
-            hsl(0 100% 50%) ${scrollProgress}%)`
+            hsl(270 100% 50%) ${scrollProgress}%)`
         }}
       />
       <Header />

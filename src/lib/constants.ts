@@ -23,6 +23,12 @@ export const SKILLS = {
     "3D Printing/Designing",
     "Computer Technician",
     "Microsoft Office Applications",
+    // Added from project tags:
+    "ReactJS",
+    "API",
+    "NodeJS",
+    "Emulation",
+    "React",
   ],
   softSkills: [
     {
@@ -72,7 +78,7 @@ export const PROJECTS = [
     title: "Pokedex Web App",
     description: "A responsive Pokédex web app for learning about Pokémon, searching by region and number.",
     image: "https://miro.medium.com/v2/resize:fit:1400/1*1JVa12hgY3oFKy89HB6ylA.png",
-    tags: ["React", "Pokémon API"],
+    tags: ["React"],
     github: "https://github.com/YOURUSER/pokedex-web-app",
     link: "https://pokedex-web-app.com"
   },

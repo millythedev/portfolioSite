@@ -1,8 +1,10 @@
-import { motion, type Variants } from "framer-motion";
+import React from "react";
+import { motion, type Variants, useInView } from "framer-motion";
 import type { ReactNode } from "react";
 
 /**
  * A wrapper component that animates its children when they come into view.
+ * It animates opacity in/out as the user scrolls, using useInView and the animate prop.
  */
 export function AnimatedElement({
   children,
@@ -21,11 +23,17 @@ export function AnimatedElement({
   triggerOnce?: boolean;
   threshold?: number;
 }) {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, {
+    amount: threshold,
+    once: false,
+  });
+
   return (
     <motion.div
+      ref={ref}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: triggerOnce, amount: threshold }}
+      animate={isInView ? "show" : "hidden"}
       variants={variants}
       className={className}
       transition={{

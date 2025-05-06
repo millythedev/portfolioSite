@@ -4,19 +4,13 @@ import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/portfolioSite/',
+  base: '/',
   plugins: [react()],
   resolve: {
-    alias: [
-      {
-        find: '@',
-        replacement: resolve(__dirname, 'src')
-      },
-      {
-        find: '@/lib',
-        replacement: resolve(__dirname, 'src/lib')
-      }
-    ]
+    alias: {
+      '@': resolve(__dirname, 'src'),
+      '@/lib': resolve(__dirname, 'src/lib')
+    }
   },
   build: {
     outDir: 'dist',
@@ -29,9 +23,10 @@ export default defineConfig({
     }
   },
   server: {
-    port: 5173,
-    strictPort: true,
-    host: true,
+    port: 3000,
+    host: '127.0.0.1',
+    strictPort: false,
+    open: true
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],

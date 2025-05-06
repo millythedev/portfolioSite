@@ -12,7 +12,7 @@ export function ProjectsSection() {
     <section id="projects" className="py-16 md:py-24 bg-card">
       <div className="container">
         <AnimatedElement variants={fadeIn("up", 0.1)}>
-          <h2 className="section-title">projects</h2>
+          <h2 className="section-title text-4xl md:text-5xl">projects</h2>
         </AnimatedElement>
 
         <AnimatedElement variants={fadeIn("up", 0.2)} className="text-lg mb-12 max-w-3xl mx-auto text-center">
@@ -79,17 +79,15 @@ export function ProjectsSection() {
             const project = PROJECTS.find(p => p.title === openModal);
             if (!project) return null;
             return (
-              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-                <div className="bg-card rounded-lg shadow-lg w-[90vw] max-w-md">
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+                onClick={() => setOpenModal(null)}
+              >
+                <div
+                  className="bg-card rounded-lg shadow-lg w-[90vw] max-w-md"
+                  onClick={e => e.stopPropagation()}
+                >
                   <div className="relative p-6">
-                    <button
-                      className="absolute right-4 top-4 text-2xl text-gray-500 hover:text-red-700"
-                      onClick={() => setOpenModal(null)}
-                      aria-label="Close"
-                      type="button"
-                    >
-                      ×
-                    </button>
                     <div className="flex flex-col items-center gap-4">
                       <img src={project.image} alt={project.title} className="w-32 h-32 object-cover rounded-md mb-4" />
                       <h3 className="text-2xl font-bold mb-2">{project.title}</h3>

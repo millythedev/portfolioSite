@@ -1,5 +1,5 @@
 import { PROJECTS } from "../../lib/constants";
-import { Card, CardContent } from "../ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { AnimatedElement, HoverElement, StaggerContainer } from "../ui/motion";
 import { motion } from "framer-motion";
 import { cardHoverVariants, fadeIn } from "../../lib/animations";

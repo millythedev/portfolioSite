@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 import { AnimatedElement, StaggerContainer } from "../ui/motion";
 import { fadeIn, slideIn, textVariant } from "../../lib/animations";
 
+// i love tessa
 export function HeroSection() {
+  // i love tessa
   return (
     <section id="home" className="pt-24 md:pt-32 pb-16 relative">
       <div className="hero-gradient absolute -top-24 left-0 right-0 w-full h-96 z-0" />

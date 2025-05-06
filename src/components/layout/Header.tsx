@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { NAV_ITEMS, SOCIAL_LINKS } from "../../lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "../ui/button";
+import { AnimatedElement } from "../ui/motion";
+import { fadeIn } from "@/lib/animations";
 
 export function Header() {
   const [activeSection, setActiveSection] = useState("#home");
@@ -10,12 +13,8 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+      setIsScrolled(window.scrollY > 0);
 
-      // Check if scrolled to update header style
-      setIsScrolled(scrollPosition > 50);
-
-      // Find the current active section
       const sections = document.querySelectorAll("section");
       for (const section of sections) {
         const sectionTop = section.offsetTop - 100;
@@ -23,8 +22,8 @@ export function Header() {
         const sectionId = `#${section.id}`;
 
         if (
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight
+          window.scrollY >= sectionTop &&
+          window.scrollY < sectionTop + sectionHeight
         ) {
           setActiveSection(sectionId);
         }
@@ -38,21 +37,13 @@ export function Header() {
   }, []);
 
   return (
-    <motion.header
-      className={`fixed top-0 left-0 w-full z-50 transition-all ${
-        isScrolled ? "py-2" : "py-4"
+    <AnimatedElement
+      variants={fadeIn("down")}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-background/80 backdrop-blur-sm shadow-sm" : ""
       }`}
-      initial={{ y: -100, opacity: 0 }}
-      animate={{
-        y: 0,
-        opacity: 1,
-        backgroundColor: isScrolled ? "hsl(var(--background)/80)" : "transparent",
-        backdropFilter: isScrolled ? "blur(8px)" : "none",
-        boxShadow: isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none"
-      }}
-      transition={{ duration: 0.4 }}
     >
-      <div className="container flex items-center justify-between">
+      <header className="container flex h-16 items-center justify-between px-4 md:px-6">
         <motion.div
           className="font-sourceCode text-xl"
           whileHover={{ scale: 1.05 }}
@@ -109,7 +100,6 @@ export function Header() {
           </motion.a>
         </div>
 
-        {/* Mobile menu button */}
         <motion.button
           className="block md:hidden text-foreground p-2 rounded-md"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -140,9 +130,8 @@ export function Header() {
             )}
           </svg>
         </motion.button>
-      </div>
+      </header>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -200,6 +189,6 @@ export function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </AnimatedElement>
   );
 }

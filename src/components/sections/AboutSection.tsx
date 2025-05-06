@@ -4,6 +4,7 @@ import { AnimatedElement, StaggerContainer } from "../ui/motion";
 import { fadeIn, slideIn } from "../../lib/animations";
 import { motion } from "framer-motion";
 
+// i love tessa
 export function AboutSection() {
   return (
     <section id="about" className="py-16 md:py-24 bg-card">

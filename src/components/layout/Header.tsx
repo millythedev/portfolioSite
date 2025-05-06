@@ -60,7 +60,7 @@ export function Header() {
         >
           <Link to="/" className="flex items-center gap-1">
             <span className="text-primary">&lt;</span>
-            <span>EJ</span>
+            <span>EC</span>
             <span className="text-primary">/&gt;</span>
           </Link>
         </motion.div>
@@ -95,7 +95,7 @@ export function Header() {
             whileHover={{ scale: 1.2, rotate: 5 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            <img src="/images/github.svg" alt="GitHub" width={20} height={20} />
+            <img src="/images/github.svg" alt="GitHub" width={24} height={24} />
           </motion.a>
           <motion.a
             href={SOCIAL_LINKS.linkedin}
@@ -105,7 +105,7 @@ export function Header() {
             whileHover={{ scale: 1.2, rotate: -5 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            <img src="/images/linkedin.svg" alt="LinkedIn" width={20} height={20} />
+            <img src="/images/linkedin.svg" alt="LinkedIn" width={24} height={24} />
           </motion.a>
         </div>
 

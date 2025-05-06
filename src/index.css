@@ -84,6 +84,25 @@
     filter: blur(125px);
   }
 
+  .scroll-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    background: linear-gradient(to bottom,
+      hsl(0 0% 0%) 0%,
+      hsl(0 100% 50%) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .scroll-gradient.active {
+    opacity: 1;
+  }
+
   .skill-bar {
     @apply h-4 rounded-full overflow-hidden relative;
     background: hsl(var(--muted));

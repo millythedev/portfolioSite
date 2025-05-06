@@ -1,15 +1,14 @@
-<<<<<<< HEAD
-# Milly's Portfolio
+# Emilio Cleveland's Portfolio
 
-Welcome to my professional portfolio website! This is where I showcase my work, skills, and experience in software development.
+A modern, responsive portfolio website showcasing my work as a Computer Science student at Texas A&M University.
 
 ## 🌐 Live Website
 
-Visit my portfolio at: [https://millythedev.github.io/website/](https://millythedev.github.io/website/)
+Visit my portfolio at: [https://millythedev.github.io/portfolioSite/](https://millythedev.github.io/portfolioSite/)
 
 ## 🚀 About Me
 
-I'm a passionate software developer with a focus on creating beautiful, functional, and user-friendly applications. My expertise lies in modern web technologies and I'm constantly learning and adapting to new tools and frameworks.
+I'm a Computer Science student at Texas A&M University with a passion for creating elegant, efficient, and user-friendly applications. My focus is on modern web technologies and software development best practices.
 
 ## 💻 Skills
 
@@ -24,49 +23,15 @@ I'm a passionate software developer with a focus on creating beautiful, function
   - Git & GitHub
   - Vite
   - Node.js
+  - Bun Package Manager
   - Modern Development Tools
-
-## 🎯 Projects
-
-My portfolio showcases various projects that demonstrate my skills and experience. Each project is carefully crafted with attention to detail and best practices in mind.
-
-## 📫 Contact
-
-Feel free to reach out to me through:
-- [LinkedIn](https://www.linkedin.com/in/your-linkedin)
-- [GitHub](https://github.com/millythedev)
-- [Email](mailto:your.email@example.com)
-
-## 🛠️ Technologies Used
-
-This portfolio is built using:
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- GitHub Pages for hosting
-
-## 📄 Resume
-
-You can view my detailed resume [here](link-to-your-resume).
-
----
-
-⭐️ From [millythedev](https://github.com/millythedev)
-=======
-# Portfolio Site
-
-A modern, responsive portfolio website built with React, TypeScript, and Vite.
-
-## 🌐 Live Site
-
-Visit the live site at: [https://millythedev.github.io/portfolioSite/](https://millythedev.github.io/portfolioSite/)
 
 ## 🛠️ Built With
 
 - React 18
 - TypeScript
 - Vite
+- Tailwind CSS
 - GitHub Pages for hosting
 
 ## 🚀 Getting Started
@@ -93,9 +58,9 @@ Visit the live site at: [https://millythedev.github.io/portfolioSite/](https://m
    bun run dev
    ```
 
-4. Open [http://localhost:5173](http://localhost:5173) in your browser
+4. Open [http://localhost:5173/portfolioSite/](http://localhost:5173/portfolioSite/) in your browser
 
-## 📦 Scripts
+## 📦 Available Scripts
 
 - `bun run dev` - Start development server
 - `bun run build` - Build for production
@@ -116,6 +81,13 @@ src/
 └── main.tsx       # Entry point
 ```
 
+## 📫 Contact
+
+Feel free to reach out to me through:
+- [LinkedIn](https://www.linkedin.com/in/your-linkedin)
+- [GitHub](https://github.com/millythedev)
+- [Email](mailto:your.email@example.com)
+
 ## 🔄 Deployment
 
 The site automatically deploys to GitHub Pages when changes are pushed to the main branch.
@@ -123,4 +95,7 @@ The site automatically deploys to GitHub Pages when changes are pushed to the ma
 ## 📝 License
 
 This project is open source and available under the [MIT License](LICENSE).
->>>>>>> abdb84e014e95efc88e1a56022391ef0978cb40e
+
+---
+
+⭐️ From [millythedev](https://github.com/millythedev)

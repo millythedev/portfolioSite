@@ -8,8 +8,14 @@ if (!rootElement) {
   throw new Error("Failed to find root element");
 }
 
+const isDev = import.meta.env.DEV;
+const basename = isDev ? '/' : '/portfolioSite';
+
+console.log('Environment:', isDev ? 'development' : 'production');
+console.log('Base path:', basename);
+
 createRoot(rootElement).render(
-  <BrowserRouter basename={import.meta.env.PROD ? '/portfolioSite' : '/'}>
+  <BrowserRouter basename={basename}>
     <App />
   </BrowserRouter>
 );

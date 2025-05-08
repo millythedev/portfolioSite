@@ -78,7 +78,11 @@ export function HeroSection() {
                 <a href="#projects">View Projects</a>
               </Button>
               <Button variant="outline" asChild>
-                <a href="/portfolioSite/assets/EmilioResume.pdf" download>
+                <a 
+                  href="/portfolioSite/assets/EmilioResume.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
                   Download Resume
                 </a>
               </Button>

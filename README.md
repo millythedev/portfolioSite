@@ -49,8 +49,6 @@ Requires Node.js 20 or higher and Bun.
 | `bun run format` | Format the code |
 
 ## Project Structure
-
-```
 src/
   components/   React components
   hooks/        Custom React hooks
@@ -59,7 +57,7 @@ src/
   assets/       Images and fonts
   App.tsx       Root component
   main.tsx      Entry point
-```
+
 
 ## Deployment
 
@@ -70,6 +68,6 @@ A GitHub Actions workflow builds the site and deploys it to GitHub Pages on ever
 - GitHub: https://github.com/millythedev
 - Email: emiliocleveland1@gmail.com
 
-## License
+## About
 
-Released under the MIT License. See the [LICENSE](LICENSE) file.
+This is a personal portfolio project.

@@ -1,101 +1,75 @@
 # Emilio Cleveland's Portfolio
 
-A modern, responsive portfolio website showcasing my work as a Computer Science student at Texas A&M University.
+Personal portfolio site for Emilio Cleveland, a Computer Science student at Texas A&M University. Built with React, TypeScript, Vite, and Tailwind CSS, and hosted on GitHub Pages.
 
-## 🌐 Live Website
+Live site: https://millythedev.github.io/portfolioSite/
 
-Visit my portfolio at: [https://millythedev.github.io/portfolioSite/](https://millythedev.github.io/portfolioSite/)
-
-## 🚀 About Me
-
-I'm a Computer Science student at Texas A&M University with a passion for creating elegant, efficient, and user-friendly applications. My focus is on modern web technologies and software development best practices.
-
-## 💻 Skills
-
-- **Frontend Development**
-  - React.js
-  - TypeScript
-  - Tailwind CSS
-  - Modern JavaScript (ES6+)
-  - Responsive Web Design
-
-- **Tools & Technologies**
-  - Git & GitHub
-  - Vite
-  - Node.js
-  - Bun Package Manager
-  - Modern Development Tools
-
-## 🛠️ Built With
+## Tech Stack
 
 - React 18
 - TypeScript
 - Vite
 - Tailwind CSS
-- GitHub Pages for hosting
+- Bun (package manager) and Node.js
+- GitHub Pages (hosting) with automatic deployment
 
-## 🚀 Getting Started
+## Running Locally
 
-### Prerequisites
-
-- Node.js (v20 or higher recommended)
-- Bun package manager
-
-### Installation
+Requires Node.js 20 or higher and Bun.
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/millythedev/portfolioSite.git
+   cd portfolioSite
    ```
 
 2. Install dependencies:
+
    ```bash
    bun install
    ```
 
 3. Start the development server:
+
    ```bash
    bun run dev
    ```
 
-4. Open [http://localhost:5173/portfolioSite/](http://localhost:5173/portfolioSite/) in your browser
+4. Open http://localhost:5173/portfolioSite/ in your browser.
 
-## 📦 Available Scripts
+## Scripts
 
-- `bun run dev` - Start development server
-- `bun run build` - Build for production
-- `bun run preview` - Preview production build locally
-- `bun run lint` - Run linter
-- `bun run format` - Format code
+| Command | Description |
+| --- | --- |
+| `bun run dev` | Start the development server |
+| `bun run build` | Build for production |
+| `bun run preview` | Preview the production build locally |
+| `bun run lint` | Run the linter |
+| `bun run format` | Format the code |
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 src/
-├── components/     # React components
-├── styles/        # CSS files
-├── assets/        # Images, fonts, etc.
-├── hooks/         # Custom React hooks
-├── utils/         # Utility functions
-├── App.tsx        # Main App component
-└── main.tsx       # Entry point
+  components/   React components
+  hooks/        Custom React hooks
+  utils/        Utility functions
+  styles/       CSS files
+  assets/       Images and fonts
+  App.tsx       Root component
+  main.tsx      Entry point
 ```
 
-## 📫 Contact
+## Deployment
 
-Feel free to reach out to me through:
-- [LinkedIn](https://www.linkedin.com/in/your-linkedin)
-- [GitHub](https://github.com/millythedev)
-- [Email](mailto:your.email@example.com)
+A GitHub Actions workflow builds the site and deploys it to GitHub Pages on every push to `main`.
 
-## 🔄 Deployment
+## Contact
 
-The site automatically deploys to GitHub Pages when changes are pushed to the main branch.
+- GitHub: https://github.com/millythedev
+- Email: emiliocleveland1@gmail.com
 
-## 📝 License
+## License
 
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-⭐️ From [millythedev](https://github.com/millythedev)
+Released under the MIT License. See the [LICENSE](LICENSE) file.

@@ -45,7 +45,6 @@ function CyclingPhrase() {
 
 // i love tessa
 export function HeroSection() {
-  // i love tessa
   return (
     <section id="home" className="pt-24 md:pt-32 pb-16 relative">
 

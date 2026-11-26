@@ -167,7 +167,7 @@ function App() {
         }}
         aria-hidden="true"
       />
-      {/* Dynamic gradient background (much more transparent) */}
+      {/* gradient that changes color as you scroll */}
       <div
         style={{
           position: "fixed",
@@ -198,7 +198,7 @@ function App() {
         }}
         aria-hidden="true"
       />
-      {/* Vignette black overlay, more subtle */}
+      {/* dark vignette around the edges */}
       <div
         style={{
           position: "fixed",

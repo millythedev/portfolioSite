@@ -23,12 +23,11 @@ export const SKILLS = {
     "3D Printing/Designing",
     "Computer Technician",
     "Microsoft Office Applications",
-    // Added from project tags:
     "ReactJS",
     "API",
     "NodeJS",
-    "Emulation",
-    "React",
+    "TypeScript",
+    "Tailwind CSS",
   ],
   softSkills: [
     {
@@ -49,37 +48,43 @@ export const SKILLS = {
   ]
 };
 
-export const PROJECTS = [
+export const PROJECTS: {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  github: string;
+  link?: string;
+}[] = [
   {
     title: "Better Weather",
-    description: "A clean and accurate weather app showing local and global forecasts with modern design.",
-    image: "https://uizard.io/static/89cb1d30cdee9c19b0ce72efe004ff49/a8e47/f5e31989f816c5b15c47cd54b0eb0b30b210b6f0-1440x835.png",
-    tags: ["ReactJS", "API"],
-    github: "https://github.com/YOURUSER/better-weather",
-    link: "https://better-weather.com"
+    description: "A weather app where you can search any city or use your location to see the current weather, the next 24 hours and a 7 day forecast. The background changes with the weather and time of day.",
+    image: import.meta.env.BASE_URL + "images/projects/better-weather.jpg",
+    tags: ["React", "TypeScript", "API"],
+    github: "https://github.com/millythedev/betterWeather",
+    link: "https://millythedev.github.io/betterWeather/"
   },
   {
     title: "BetterJungle",
-    description: "E-commerce analytics dashboard for Amazon sellers featuring sales and profit insights.",
-    image: "https://www.junglescout.com/wp-content/uploads/2024/03/Screen-Shot-2024-03-12-at-4.39.41-PM.png",
-    tags: ["ReactJS", "NodeJS"],
-    github: "https://github.com/YOURUSER/betterjungle",
-    link: "https://betterjungle.com"
+    description: "My League of Legends jungle tool with builds, runes, counters and an item calculator for my favorite jungle champs. I made it because the live apps eat up way too much CPU while in game.",
+    image: import.meta.env.BASE_URL + "images/projects/better-jungle.jpg",
+    tags: ["React", "TypeScript", "Tailwind"],
+    github: "https://github.com/millythedev/betterJungle",
+    link: "https://millythedev.github.io/betterJungle/"
   },
   {
-    title: "GameBoy Emulator",
-    description: "A browser-based Game Boy emulator supporting classic games and save states.",
-    image: "https://play-lh.googleusercontent.com/-CBEzfqzqXVejF3lECo7lCfKdAXuaAJUdb4cNcaGGB4uTwVMxqRXi1qWn1xmi2xA81I=w526-h296-rw",
-    tags: ["JavaScript", "Emulation"],
-    github: "https://github.com/YOURUSER/gameboy-emulator",
-    link: "https://gameboy-emulator.com"
+    title: "Milly's Pokédex",
+    description: "A Pokédex for all 386 Pokémon from Gen 1-3. Search by name or number, filter by type or region, and check stats at any level.",
+    image: import.meta.env.BASE_URL + "images/projects/millydex.jpg",
+    tags: ["React", "TypeScript", "API"],
+    github: "https://github.com/millythedev/millydex",
+    link: "https://millythedev.github.io/millydex/"
   },
   {
-    title: "Pokedex Web App",
-    description: "A responsive Pokédex web app for learning about Pokémon, searching by region and number.",
-    image: "https://miro.medium.com/v2/resize:fit:1400/1*1JVa12hgY3oFKy89HB6ylA.png",
-    tags: ["React"],
-    github: "https://github.com/YOURUSER/pokedex-web-app",
-    link: "https://pokedex-web-app.com"
+    title: "PriorityQ",
+    description: "A command line task manager in C++. Add tasks with due dates and color coded priorities, sort and filter them, and track progress. Tasks save to a file between sessions.",
+    image: import.meta.env.BASE_URL + "images/projects/priorityq.gif",
+    tags: ["C++", "CLI"],
+    github: "https://github.com/millythedev/PriorityQ"
   },
 ];

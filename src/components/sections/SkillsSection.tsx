@@ -17,7 +17,7 @@ export function SkillsSection() {
       { name: "API", percent: 85, color: "hsl(200, 90%, 55%)" },
       { name: "NodeJS", percent: 87, color: "hsl(120, 80%, 50%)" },
       { name: "TypeScript", percent: 80, color: "hsl(190, 90%, 55%)" },
-      { name: "Emulation", percent: 74, color: "hsl(280, 80%, 55%)" },
+      { name: "Tailwind CSS", percent: 85, color: "hsl(280, 80%, 55%)" },
     ],
     [
       { name: "Adobe Creative Cloud", percent: 88, color: "hsl(350, 80%, 55%)" },

@@ -89,7 +89,7 @@ export function ProjectsSection() {
                 >
                   <div className="relative p-6">
                     <div className="flex flex-col items-center gap-4">
-                      <img src={project.image} alt={project.title} className="w-32 h-32 object-cover rounded-md mb-4" />
+                      <img src={project.image} alt={project.title} className="w-full aspect-video object-cover object-top rounded-md mb-2" />
                       <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                       <p className="text-muted-foreground mb-4 text-center">{project.description}</p>
                     </div>
@@ -100,16 +100,18 @@ export function ProjectsSection() {
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition"
                       >
-                        <img src="/images/github.svg" alt="GitHub" className="w-5 h-5" /> GitHub
+                        <img src={import.meta.env.BASE_URL + "images/github.svg"} alt="GitHub" className="w-5 h-5 invert" /> GitHub
                       </a>
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 bg-red-700 text-white rounded-full hover:bg-red-800 transition"
-                      >
-                        Visit Project
-                      </a>
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-4 py-2 bg-red-700 text-white rounded-full hover:bg-red-800 transition"
+                        >
+                          Visit Project
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

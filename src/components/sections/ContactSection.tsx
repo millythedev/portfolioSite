@@ -29,8 +29,12 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In real implementation, you'd send this data to an API or email service
-    console.log("Form submitted:", formData);
+    // no backend on github pages so this opens their email app with everything filled in
+    const subject = encodeURIComponent(`Message from ${formData.name}`);
+    const body = encodeURIComponent(`${formData.message}
+
+From: ${formData.name} (${formData.email})`);
+    window.location.href = `mailto:emiliocleveland1@gmail.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
 
     // Reset form after submission
@@ -247,7 +251,7 @@ export function ContactSection() {
                       className="w-full"
                       disabled={submitted}
                     >
-                      {submitted ? "Message Sent!" : "Send Message"}
+                      {submitted ? "Opening your email..." : "Send Message"}
                     </Button>
                   </motion.div>
                 </motion.div>

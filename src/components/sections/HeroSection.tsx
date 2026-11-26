@@ -48,7 +48,6 @@ export function HeroSection() {
   // i love tessa
   return (
     <section id="home" className="pt-24 md:pt-32 pb-16 relative">
-      {/* Removed hero-gradient background overlay */}
 
       <div className="container relative z-10">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">

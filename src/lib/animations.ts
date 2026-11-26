@@ -99,17 +99,3 @@ export const cardHoverVariants: Variants = {
     }
   },
 };
-
-// Skill bar animation variants
-export const skillBarVariants: Variants = {
-  hidden: {
-    width: 0
-  },
-  visible: (width: number) => ({
-    width: `${width}%`,
-    transition: {
-      duration: 1.2,
-      ease: "easeInOut"
-    }
-  })
-};

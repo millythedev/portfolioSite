@@ -1,7 +1,7 @@
 import { SKILLS } from "../../lib/constants";
 import { AnimatedElement, StaggerContainer } from "../ui/motion";
 import { motion } from "framer-motion";
-import { fadeIn, skillBarVariants } from "../../lib/animations";
+import { fadeIn } from "../../lib/animations";
 
 export function SkillsSection() {
   const columns = [
@@ -49,14 +49,14 @@ export function SkillsSection() {
                       <span>{skill.percent}%</span>
                     </div>
                     <div className="skill-bar">
+                      {/* uses its own targets instead of variants so the parent fading can't reset it to 0 */}
                       <motion.div
                         className="skill-progress"
-                        style={{ backgroundColor: skill.color, width: `${skill.percent}%` }}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        custom={skill.percent}
-                        variants={skillBarVariants}
+                        style={{ backgroundColor: skill.color }}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.percent}%` }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 1.2, ease: "easeInOut" }}
                       />
                     </div>
                   </motion.div>

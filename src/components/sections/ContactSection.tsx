@@ -8,6 +8,8 @@ import { AnimatedElement, StaggerContainer } from "../ui/motion";
 import { motion } from "framer-motion";
 import { fadeIn, slideIn } from "../../lib/animations";
 
+const MY_EMAIL = "emiliocleveland1@gmail.com";
+
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,7 +17,7 @@ export function ContactSection() {
     message: "",
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -27,26 +29,43 @@ export function ContactSection() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // no backend on github pages so this opens their email app with everything filled in
-    const subject = encodeURIComponent(`Message from ${formData.name}`);
-    const body = encodeURIComponent(`${formData.message}
+    setStatus("sending");
 
-From: ${formData.name} (${formData.email})`);
-    window.location.href = `mailto:emiliocleveland1@gmail.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
-
-    // Reset form after submission
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
+    // github pages has no backend so formsubmit forwards the message to my email
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${MY_EMAIL}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `Portfolio message from ${formData.name}`,
+          _replyto: formData.email,
+          _template: "table",
+          _captcha: "false",
+        }),
       });
-      setSubmitted(false);
-    }, 3000);
+      const data = await res.json();
+      if (!res.ok || String(data.success) !== "true") throw new Error(data.message);
+
+      setStatus("sent");
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
   };
+
+  // if formsubmit is down they can still email me from their own app
+  const mailtoLink = `mailto:${MY_EMAIL}?subject=${encodeURIComponent(
+    `Portfolio message from ${formData.name}`
+  )}&body=${encodeURIComponent(`${formData.message}
+
+From: ${formData.name} (${formData.email})`)}`;
 
   return (
     <section id="contact" className="py-16 md:py-24 bg-card">
@@ -136,7 +155,7 @@ From: ${formData.name} (${formData.email})`);
                 </motion.div>
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <p className="text-muted-foreground">emiliocleveland1@gmail.com</p>
+                  <a href={`mailto:${MY_EMAIL}`} className="text-muted-foreground hover:text-primary">{MY_EMAIL}</a>
                 </div>
               </motion.div>
 
@@ -243,17 +262,26 @@ From: ${formData.name} (${formData.email})`);
                   viewport={{ once: true }}
                 >
                   <motion.div
-                    whileHover={{ scale: submitted ? 1 : 1.03 }}
-                    whileTap={{ scale: submitted ? 1 : 0.98 }}
+                    whileHover={{ scale: status === "sending" ? 1 : 1.03 }}
+                    whileTap={{ scale: status === "sending" ? 1 : 0.98 }}
                   >
                     <Button
                       type="submit"
                       className="w-full"
-                      disabled={submitted}
+                      disabled={status === "sending"}
                     >
-                      {submitted ? "Opening your email..." : "Send Message"}
+                      {status === "sending" ? "Sending..." : status === "sent" ? "Message Sent!" : "Send Message"}
                     </Button>
                   </motion.div>
+                  {status === "sent" && (
+                    <p className="text-sm text-green-500 mt-3 text-center">Thanks! I'll get back to you soon.</p>
+                  )}
+                  {status === "error" && (
+                    <p className="text-sm text-red-500 mt-3 text-center">
+                      Something went wrong sending that.{" "}
+                      <a href={mailtoLink} className="underline">Email me directly instead</a>
+                    </p>
+                  )}
                 </motion.div>
               </form>
             </Card>

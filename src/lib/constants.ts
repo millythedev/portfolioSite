@@ -85,6 +85,7 @@ export const PROJECTS: {
     description: "A command line task manager in C++. Add tasks with due dates and color coded priorities, sort and filter them, and track progress. Tasks save to a file between sessions.",
     image: import.meta.env.BASE_URL + "images/projects/priorityq.gif",
     tags: ["C++", "CLI"],
-    github: "https://github.com/millythedev/PriorityQ"
+    github: "https://github.com/millythedev/PriorityQ",
+    link: "https://millythedev.github.io/PriorityQ/"
   },
 ];

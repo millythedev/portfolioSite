@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 
 /**
  * A wrapper component that animates its children when they come into view.
- * It animates opacity in/out as the user scrolls, using useInView and the animate prop.
+ * Only plays once by default so stuff doesn't disappear again when you scroll back up.
  */
 export function AnimatedElement({
   children,
@@ -26,7 +26,7 @@ export function AnimatedElement({
   const ref = React.useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
     amount: threshold,
-    once: false,
+    once: triggerOnce,
   });
 
   return (

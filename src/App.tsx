@@ -10,6 +10,13 @@ function App() {
   const [scrollPercent, setScrollPercent] = useState(0);
   const petalsRef = useRef<HTMLCanvasElement>(null);
 
+  // links like portfolioSite/#contact need this since the page renders after the browser tries to jump
+  useEffect(() => {
+    if (!window.location.hash) return;
+    const target = document.querySelector(window.location.hash);
+    if (target) setTimeout(() => target.scrollIntoView(), 100);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;

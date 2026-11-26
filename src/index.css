@@ -106,14 +106,7 @@
   }
 
   .skill-progress {
-    @apply h-full absolute top-0 left-0;
-    animation: fillBar 1.5s ease-in-out forwards;
-    transform-origin: left;
-  }
-
-  @keyframes fillBar {
-    from { transform: scaleX(0); }
-    to { transform: scaleX(1); }
+    @apply h-full absolute top-0 left-0 rounded-full;
   }
 
   .nav-item-active {

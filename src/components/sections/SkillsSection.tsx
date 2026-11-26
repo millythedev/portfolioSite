@@ -1,6 +1,5 @@
-import { SKILLS } from "../../lib/constants";
-import { AnimatedElement, StaggerContainer } from "../ui/motion";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { AnimatedElement } from "../ui/motion";
 import { fadeIn } from "../../lib/animations";
 
 export function SkillsSection() {
@@ -28,6 +27,31 @@ export function SkillsSection() {
     ],
   ];
 
+  // one switch for the whole section. it flips on as soon as the grid's top is on screen
+  // (or you already scrolled past it) and never flips back, so no bar can get left empty
+  const gridRef = useRef<HTMLDivElement>(null);
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    const check = () => {
+      const el = gridRef.current;
+      if (!el) return;
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
+        setShown(true);
+        stop();
+      }
+    };
+    const stop = () => {
+      window.removeEventListener("scroll", check);
+      window.removeEventListener("resize", check);
+    };
+
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+    check(); // in case the page loaded already scrolled down here
+    return stop;
+  }, []);
+
   return (
     <section id="skills" className="py-16 md:py-24">
       <div className="container">
@@ -35,36 +59,41 @@ export function SkillsSection() {
           <h2 className="section-title text-4xl md:text-5xl">skills</h2>
         </AnimatedElement>
 
-        <AnimatedElement variants={fadeIn("up", 0.4)}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-2">
-            {columns.map((column, i) => (
-              <StaggerContainer key={i} className="space-y-10">
-                {column.map((skill) => (
-                  <motion.div
-                    variants={fadeIn(i === 2 ? "right" : "left", 0)}
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-2">
+          {columns.map((column, i) => (
+            <div key={i} className="space-y-10">
+              {column.map((skill, j) => {
+                const delay = i * 0.15 + j * 0.1;
+                const fromX = i === 2 ? -40 : 40;
+                return (
+                  <div
                     key={skill.name}
+                    style={{
+                      opacity: shown ? 1 : 0,
+                      transform: shown ? "none" : `translateX(${fromX}px)`,
+                      transition: `opacity 0.5s ease-out ${delay}s, transform 0.5s ease-out ${delay}s`,
+                    }}
                   >
                     <div className="flex justify-between mb-2">
                       <span>{skill.name}</span>
                       <span>{skill.percent}%</span>
                     </div>
                     <div className="skill-bar">
-                      {/* uses its own targets instead of variants so the parent fading can't reset it to 0 */}
-                      <motion.div
+                      <div
                         className="skill-progress"
-                        style={{ backgroundColor: skill.color }}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.percent}%` }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 1.2, ease: "easeInOut" }}
+                        style={{
+                          backgroundColor: skill.color,
+                          width: shown ? `${skill.percent}%` : "0%",
+                          transition: `width 1.2s ease-in-out ${delay + 0.2}s`,
+                        }}
                       />
                     </div>
-                  </motion.div>
-                ))}
-              </StaggerContainer>
-            ))}
-          </div>
-        </AnimatedElement>
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
